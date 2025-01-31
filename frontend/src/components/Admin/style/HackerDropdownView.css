@@ -1,0 +1,30 @@
+.admin-panel {
+    position: fixed;
+    top: 0;
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow-y: auto;
+    background-color: #fff;
+    width: 100%;
+    z-index: 1000;
+}
+
+.admin-panel__visible {
+    max-height: 500px;
+    padding: 1em;
+    border-bottom: 2px solid var(--color-sky-blue-dark);
+}
+
+.admin-panel-toggle {
+    position: fixed;
+    top: 0;
+    right: .5em;
+    width: 2.5em;
+    height: 2.5em;
+    background-image: url('images/admin-with-cogwheels.svg');
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid white;
+    background-color: var(--color-sky-blue-dark);
+}

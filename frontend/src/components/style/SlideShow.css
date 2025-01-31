@@ -1,0 +1,75 @@
+.slideshow__slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slideshow__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+    display: block;
+}
+
+.slideshow__caption {
+    display: inline-block;
+    position: absolute;
+    bottom: calc(1.5vmin + 0.2vmin);
+    right: calc(1.5vmin + 0.2vmin);
+    background-color: rgba(1, 3, 29, 0.6);
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: .3em 0 0 0;
+    text-align: right;
+    padding: 0.2em;
+    font-size: max(0.6em, 1.6vmin);
+    padding-left: 1.4em;
+    background-image: url('images/location-pin.svg');
+    background-repeat: no-repeat;
+    background-position: 0.1em 50%;
+    background-size: 1.1em;
+}
+
+@media screen and (orientation: portrait) {
+    .slideshow__caption {
+        bottom: 0;
+    }
+}
+
+.slideshow__progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5vmin;
+    background-color: rgba(255, 255, 255, 0.3);
+    animation-name: decreaseWidth;
+    animation-timing-function: linear;
+    /* animation-duration set from JS */
+}
+
+@keyframes decreaseWidth {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .slideshow__progress-bar {
+        bottom: unset;
+        top: 0;
+    }
+}
+
+.slideshow-preload-hidden {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+}

@@ -1,0 +1,22 @@
+BUGS:
+    ✔ /photos @done(25-01-15 20:37)
+    ✔ fix gallery photos aspect ratio since migration @done(25-01-24 22:00)
+    ✔ Admin space: poor performance with calendar component in user list. Consider virtualizing the list and only enabling calendar on edit. @done(25-01-29 22:09)
+
+MIGRATION:
+    ✔ process photos async @done(25-01-15 21:45)
+    ✔ list of foods in appdata @done(25-01-15 22:57)
+    ☐ demo mode
+    ✔ allow editing public translations without recompiling @done(25-01-24 02:11)
+
+TODO:
+    ☐ give additional time to fill / based on user
+    ☐ notifications of what's new for users
+    ☐ edit config and user-data from admin space
+    admin:
+        ☐ mark users presence probability
+
+Guest Book?:
+    ☐ Add Comment
+    ☐ View public entries
+    ☐ Add private entry

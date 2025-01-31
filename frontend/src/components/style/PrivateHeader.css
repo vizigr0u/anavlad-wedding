@@ -1,0 +1,65 @@
+.private-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4vmin;
+}
+
+.header__invite-you-to,
+.header__location-name {
+    font-variant: small-caps;
+    font-size: 1em;
+}
+
+.wedding-date {
+    text-transform: capitalize;
+    font-size: 1.5em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.wedding-day-number {
+    box-sizing: border-box;
+}
+
+.wedding-day-of-week {
+    font-size: 1.2em;
+}
+
+.wedding-year {
+    margin-top: -4vmin;
+    font-size: 2.3em;
+}
+
+@media screen and (orientation: portrait) {
+    .private-info {
+        gap: 1.5vw;
+    }
+
+    .wedding-date {
+        flex-direction: row;
+        align-items: center;
+        align-content: space-between;
+        gap: 3vw;
+    }
+
+    .wedding-day-number {
+        font-size: 1.9em;
+        vertical-align: middle;
+    }
+
+    .wedding-day-and-month {
+        margin-top: -2vw;
+    }
+
+    .wedding-day-of-week {
+        font-size: 0.9em;
+    }
+
+    .wedding-year {
+        font-size: 1.4em;
+        margin-top: -1vw;
+    }
+}

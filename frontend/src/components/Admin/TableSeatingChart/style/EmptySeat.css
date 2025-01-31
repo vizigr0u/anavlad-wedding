@@ -1,0 +1,11 @@
+.empty-seat {
+    background-color: lightgray;
+    border: 1px solid black;
+    padding: 8px;
+    margin: 4px;
+    min-height: 1em;
+}
+
+.empty-seat--dropping {
+    background-color: lightblue;
+}

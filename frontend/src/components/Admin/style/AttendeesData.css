@@ -1,0 +1,49 @@
+.attendees-view h2 {
+    font-size: larger;
+}
+
+.attendees-view h3 {
+    font-size: large;
+}
+
+.attendees-summary {
+    margin-left: 2em;
+}
+
+.attendee-answer-category {
+    margin-left: 2em;
+}
+
+.attendee-group-view {
+    margin-top: .5em;
+    background-color: var(--color-grey-lightest);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 3px;
+}
+
+.attendee-view {
+    display: grid;
+    grid-template-columns: 25% 5% 60% 10%;
+    border-left: 3px solid transparent;
+}
+
+.attendee-view-header {
+    font-weight: bolder;
+}
+
+.attendee-view__name {
+    text-align: right;
+}
+
+.attendee-view--new {
+    color: #0f1070;
+    border-left-color: #BB2222;
+}
+
+.attendee-view__collapsable {
+    padding-left: 5px;
+}
+
+.attendee-view__collapsable--new {
+    border-left: 4px solid #BB2222;
+    padding-left: 2px;
+}

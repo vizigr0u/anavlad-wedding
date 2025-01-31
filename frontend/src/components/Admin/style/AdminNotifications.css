@@ -1,0 +1,36 @@
+.admin-notifications {
+    border: 1px solid #888;
+    background-color: #F8F8F8;
+    padding: .5em;
+    margin: .3em;
+    display: flex;
+}
+
+.admin-notifications__unread {
+    border-color: #e26009;
+    background-color: #e5df84;
+}
+
+.admin-notifications__loading {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url(images/spinner.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: spin .6s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.admin-notification__dismiss-button {
+    float: right;
+}

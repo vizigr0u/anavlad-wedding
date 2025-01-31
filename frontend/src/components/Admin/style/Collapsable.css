@@ -1,0 +1,18 @@
+.collapse-button {
+    border: 1px solid black;
+    padding: 0.2em;
+    padding-right: 1.5em;
+    background-size: .9em;
+    min-height: 1.5em;
+    background-position: calc(100% - .4em) center;
+    background-repeat: no-repeat;
+}
+
+.collapse-button__collapsed {
+    background-image: url('images/expand-down.svg');
+}
+
+.collapse-button__expanded {
+    background-image: url('images/expand-up.svg');
+    background-color: #CCC;
+}

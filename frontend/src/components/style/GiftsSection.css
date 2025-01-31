@@ -1,0 +1,248 @@
+.gifts-description {
+    margin-bottom: 4em;
+}
+
+.bank-info {
+    position: relative;
+    --bg-color: #eaeaea;
+    --button-height: 3em;
+    --arrow-size: 1.7em;
+    --tab-size: 2.5em;
+    margin-top: var(--button-height);
+    padding-bottom: 2px;
+}
+
+.bank-info__toggle {
+    position: absolute;
+    height: var(--button-height);
+    top: calc(2px - var(--button-height));
+    left: var(--tab-size);
+    width: calc(100% - var(--tab-size));
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: var(--bg-color);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7em;
+}
+
+.bank-info-title {
+    font-variant: small-caps;
+    display: flex;
+    gap: .5em;
+}
+
+.bank-title__icon {
+    width: 1.4em;
+    height: 1.4em;
+    background-image: url('images/Bank Icon.svg');
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.bank-title__arrow {
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    position: absolute;
+}
+
+.bank-title__arrow--left {
+    left: .3em;
+}
+
+.bank-title__arrow--right {
+    right: .3em;
+}
+
+.bank-info__toggle--expanded {
+    border-bottom: 0px;
+    padding-bottom: 2px;
+}
+
+.bank-info__toggle--expanded>svg {
+    transform: rotate(180deg);
+}
+
+.bank-info__container {
+    position: relative;
+    display: grid;
+    gap: 2px;
+    padding-bottom: 3em;
+}
+
+.bank-info__input {
+    display: none;
+}
+
+.bank-info__input:checked+.bank-info__input-label {
+    margin-right: 2px;
+    background-color: var(--bg-color);
+    border-right: 0px;
+}
+
+.bank-info__input-label {
+    display: block;
+    width: var(--tab-size);
+    height: var(--tab-size);
+    background-color: #8c8c8c;
+    border: 2px solid black;
+    border-right: 2px solid black;
+    position: relative;
+    z-index: 2;
+    left: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bank-info__content-container {
+    border: 2px solid black;
+    border-top: 0;
+    position: absolute;
+    left: var(--tab-size);
+    width: calc(100% - var(--tab-size));
+    min-height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    z-index: 1;
+    background-color: var(--bg-color);
+    padding: .3em;
+}
+
+.bank-info__content {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .8em;
+}
+
+#input__canada-interac:checked~.bank-info__content-container>.tab-canada-interac__content,
+#input__europe-bank:checked~.bank-info__content-container>.tab-europe-bank__content,
+#input__us-wire:checked~.bank-info__content-container>.tab-us-wire__content,
+#input__bitcoin:checked~.bank-info__content-container>.tab-bitcoin__content {
+    display: flex;
+}
+
+.bank-info__icon {
+    --icon-size: 2.1em;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    background-image: var(--icon-image);
+    background-size: cover;
+    border-radius: 50%;
+    border: 2px solid black;
+    opacity: 60%;
+}
+
+.bank-info__input:checked~label>.bank-info__icon {
+    opacity: 100%;
+}
+
+.bank-info-icon__canada-interac {
+    --icon-image: url('images/canada-flag-circular.svg');
+}
+
+.bank-info-icon__europe-bank {
+    --icon-image: url('images/Europe-Flag.svg');
+}
+
+.bank-info-icon__us-wire {
+    --icon-image: url('images/USA-Flag.svg');
+}
+
+.bank-info-icon__bitcoin {
+    --icon-image: url('images/Bitcoin.svg');
+}
+
+.bank-fields-container {
+    display: grid;
+    gap: 1em;
+    font-size: .8em;
+}
+
+.bank-field {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 6em minmax(10em, 1fr);
+}
+
+.bank-field-name {
+    text-align: right;
+}
+
+.bank-field-value {
+    user-select: all;
+    font-family: var(--font-family-mono);
+    background-color: #F5F5F5;
+    border: 0px;
+    padding: .3em 2em .3em .5em;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.bank-field-copy {
+    position: absolute;
+    right: .3em;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+@media screen and (max-width: 840px) {
+    .bank-info {
+        /* --bg-color: blue; */
+        font-size: 0.9em;
+    }
+
+    .bank-info-title {
+        font-size: .9em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .bank-info {
+        /* --bg-color: green; */
+        font-size: 0.9em;
+    }
+
+    .bank-fields-container {
+        gap: .6em;
+    }
+
+    .bank-field {
+        gap: .3em;
+        grid-template-columns: auto;
+    }
+
+    .bank-field-name {
+        text-align: center;
+    }
+
+    .bank-info-title {
+        gap: 0;
+        font-size: 0.8em;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bank-title__arrow {
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .bank-info {
+        /* --bg-color: firebrick; */
+        --arrow-size: 1.2em;
+    }
+
+    .bank-info-title {
+        font-size: 0.7em;
+    }
+
+    .bank-title__arrow {}
+}

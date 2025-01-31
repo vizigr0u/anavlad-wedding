@@ -1,0 +1,13 @@
+.please-login {
+    padding: 0 4vmin;
+    font-size: 3vmin;
+    color: rgb(168, 28, 28);
+    text-align: center;
+}
+
+.attempting-login {
+    padding: 0 4vmin;
+    font-size: 3vmin;
+    color: rgb(168, 28, 28);
+    text-align: center;
+}

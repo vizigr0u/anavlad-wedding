@@ -1,0 +1,21 @@
+.user-row {
+    border-left: 1em solid transparent;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.4fr 0.8fr 1fr 0.4fr 1fr;
+    /* min-height: 50px; */
+}
+
+.user-row--previewed {
+    background-color: rgba(184, 245, 245, 0.684);
+}
+
+.user-row--new {
+    border-left-color: #BB2222;
+}
+
+.login-link {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 0.5em;
+}

@@ -1,0 +1,13 @@
+.unplaced-area {
+    display: flex;
+    border: 2px solid black;
+    /* width: 150px; */
+    /* min-height: 150px; */
+    padding: 8px;
+    background-color: white;
+    margin: 8px;
+}
+
+.unplaced-area--dropping {
+    background-color: lightblue;
+}

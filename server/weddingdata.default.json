@@ -1,0 +1,76 @@
+{
+    "event_data": {
+        "wedding_date": "2025-06-07T16:00:00.000-04:00",
+        "wedding_timezone": "America/Chicago",
+        "answer_date": "2025-04-20T00:00:00.000-04:00",
+        "wedding_venue_name": "Buc'ees gas station",
+        "wedding_events": [
+            {
+                "date": "2025-06-07T16:00:00.000-04:00",
+                "event": "Arrival"
+            },
+            {
+                "date": "2025-06-07T16:30:00.000-04:00",
+                "event": "Ceremony"
+            },
+            {
+                "date": "2025-06-07T17:00:00.000-04:00",
+                "event": "CocktailAndConcert"
+            },
+            {
+                "date": "2025-06-07T20:00:00.000-04:00",
+                "event": "Dinner"
+            },
+            {
+                "date": "2025-06-07T21:00:00.000-04:00",
+                "event": "DanseAndBar"
+            },
+            {
+                "date": "2025-06-07T22:00:00.000-04:00",
+                "event": "WeddingCake"
+            },
+            {
+                "date": "2025-06-07T23:30:00.000-04:00",
+                "event": "LateNightSnack"
+            }
+        ],
+        "wedding_address": "10070 I-10,\nLuling, TX 78648,\nUnited States",
+        "wedding_city": "Luling, Texas, USA",
+        "google_maps_iframe_src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.3777776133484!2d-97.5926179!3d29.650810099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86434612f55141e1%3A0xef42dabd5f232b80!2sBuc-ees!5e0!3m2!1sen!2sca!4v1736911795983!5m2!1sen!2sca"
+    },
+    "payment_methods": [
+        {
+            "name": "canada-interac",
+            "text": "Canada-Interac",
+            "fields": {
+                "email": "contact@mydomain.tld",
+                "password": "MyInteracPassword"
+            }
+        },
+        {
+            "name": "europe-bank",
+            "text": "Europe-Bank",
+            "fields": {
+                "recipient": "John Doe",
+                "BIC": "BICQQQPPXXX",
+                "IBAN": "Blah blah"
+            }
+        },
+        {
+            "name": "us-wire",
+            "text": "USA-Wire",
+            "fields": {
+                "accountHolder": "John Doe",
+                "achWireRouting": "012345678",
+                "accountNumber": "0123456789012345"
+            }
+        },
+        {
+            "name": "bitcoin",
+            "text": "Bitcoin",
+            "fields": {
+                "btcAddress": "your-bitcoin-address"
+            }
+        }
+    ]
+}

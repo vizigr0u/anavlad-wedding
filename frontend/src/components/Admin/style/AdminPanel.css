@@ -1,0 +1,26 @@
+.tables_attendee_config {
+    display: grid;
+    grid-template-columns: 5% 1em auto;
+    gap: 1em;
+    background-color: #fafafa;
+    border: 1px solid black;
+    margin-top: 1em;
+}
+
+
+.tables_attendee_config>h3 {
+    display: inline;
+}
+
+.tables_attendee_affinities {
+    flex-grow: 1;
+    margin-left: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    gap: 1em;
+    font-size: smaller;
+}
+
+label {
+    margin-left: 0.5em;
+}

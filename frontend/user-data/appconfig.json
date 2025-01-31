@@ -1,0 +1,31 @@
+{
+    "contactName": "Ana/Vlad",
+    "coupleNames": [
+        "Ana",
+        "Vlad"
+    ],
+    "eventDisplayAsTimeline": true,
+    "homeSlideShow": {
+        "intervalMs": 5000,
+        "slides": [
+            {
+                "verticalSrc": "/user-data/images/slideshow/anavlad_v2.jpg",
+                "horizontalSrc": "/user-data/images/slideshow/anavlad_h2.jpg",
+                "descriptionKey": "Caption-1"
+            },
+            {
+                "verticalSrc": "/user-data/images/slideshow/anavlad_v4.jpg",
+                "horizontalSrc": "/user-data/images/slideshow/anavlad_h4.jpg",
+                "descriptionKey": "Caption-3"
+            },
+            {
+                "verticalSrc": "/user-data/images/slideshow/anavlad_v1.jpg",
+                "horizontalSrc": "/user-data/images/slideshow/anavlad_h1.jpg",
+                "descriptionKey": "Caption-5"
+            }
+        ]
+    },
+    "eventWarningKey": null,
+    "showBankingInformation": true,
+    "photoGalleryLink": null
+}

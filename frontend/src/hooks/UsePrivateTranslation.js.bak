@@ -1,0 +1,16 @@
+// import { useEffect, useState } from "react";
+// import { useTranslation } from "react-i18next";
+
+// export default function usePrivateTranslation() {
+//     const { t, i18n, ready } = useTranslation();
+//     const [reload, setReload] = useState(false);
+//     const testText = 'Private-Text';
+//     const translated = t(testText);
+//     useEffect(() => {
+//         if (translated === testText) {
+//             const timeOut = setTimeout(() => setReload(!reload), 100);
+//             return () => clearTimeout(timeOut);
+//         }
+//     }, [t, reload, translated]);
+//     return { t, i18n, ready };
+// }

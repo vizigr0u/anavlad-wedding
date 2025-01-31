@@ -1,0 +1,41 @@
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: backend
+    volumes:
+      - ./server/user-data/databases:/app/databases
+      - ./server/user-data/photos:/app/photos:ro
+      - ./server/user-data/static:/app/static:ro
+      - ./server/user-data/weddingdata.json:/app/weddingdata.json:ro
+    environment:
+      - DOMAIN=http://localhost:3000 # where you expect the final website to be hosted
+      - SESSION_SECRET=changeme-docker-compose # change this to a random string
+    expose:
+      - 5000
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5000/api/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/user-data:/public-data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

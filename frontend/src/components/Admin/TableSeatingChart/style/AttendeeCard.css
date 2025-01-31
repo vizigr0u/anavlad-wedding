@@ -1,0 +1,15 @@
+.attendee-card {
+    border: 1px solid black;
+    padding: 8px;
+    margin: 4px;
+    background-color: lightgray;
+    cursor: move;
+}
+
+.attendee-card--dragging {
+    opacity: 0.5;
+}
+
+.attendee-card--pinned {
+    background-color: steelblue;
+}

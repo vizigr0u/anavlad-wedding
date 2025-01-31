@@ -1,0 +1,21 @@
+.back-card {
+    width: 100%;
+    padding: 1.5vmin;
+    font-size: 2em;
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 2.5em;
+}
+
+/*.back-card__border {
+    padding: 1.5vmin;
+    width: 100%;
+    box-sizing: border-box;
+    border-width: 0.2vmin;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+}
+*/

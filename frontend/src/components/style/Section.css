@@ -1,0 +1,116 @@
+section {
+    --section-color: #000000;
+    --section-collapsed-icon-size: 1.5em;
+    --section-expanded-icon-size: 2.5em;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--section-color);
+    position: relative;
+    padding: 1em;
+}
+
+.section-collapse-button {
+    display: block;
+    position: relative;
+    width: 100%;
+    --section-icon-size: var(--section-expanded-icon-size);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: .1em 0;
+}
+
+.section-collapse-button:hover {
+    background-color: rgba(80, 80, 80, 0.1);
+}
+
+.section-collapse-button--collapsed {
+    --section-icon-size: var(--section-collapsed-icon-size);
+}
+
+.section__header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.section__header--collapsed {
+    flex-direction: row;
+}
+
+.section__icon {
+    width: var(--section-icon-size);
+    height: var(--section-icon-size);
+    background-image: var(--section-icon);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.section__title {
+    font-size: 1.5em;
+    color: var(--section-color);
+}
+
+.section-collapse-icon {
+    position: absolute;
+    right: .1em;
+    top: .1em;
+    width: 2em;
+    height: 2em;
+    border: none;
+    background-color: transparent;
+    background-image: url('./images/expand-down.svg');
+    background-position: center;
+    background-size: contain;
+    transform: rotate(0);
+    transition: all .1s ease-in;
+    border-radius: 50%;
+}
+
+.section-collapse-button:hover>.section-collapse-icon {
+    transform: rotate(10deg);
+}
+
+.section-collapse-icon--collapsed {
+    transform: rotate(90deg);
+}
+
+.section-collapse-button--collapsed:hover>.section-collapse-icon {
+    transform: rotate(80deg);
+}
+
+.section__content {
+    text-align: center;
+    white-space: pre-line;
+    font-size: .9em;
+    overflow: hidden;
+    margin-top: 1em;
+}
+
+.section__content--collapsed {
+    display: none;
+}
+
+@media screen and (max-width: 840px) {
+    section {
+        padding: .8em;
+        gap: .8em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    section {
+        font-size: 0.6em;
+        padding: .5em;
+        gap: .5em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    section {
+        padding: .3em;
+        gap: .3em;
+    }
+}

@@ -1,0 +1,101 @@
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* ------------- */
+
+@font-face {
+  font-family: Amsterdam;
+  src: url('fonts/Amsterdam-1.otf') format('opentype');
+}
+
+@font-face {
+  font-family: PlayfairDisplay;
+  src: url('fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey-lightest: #f4f4f4;
+  /* palette: https://coolors.co/779153-89cfff-25283d-e03d15-b33f62 */
+  --color-pink: #b33f62;
+  --color-pink-dark: #792a42;
+  --color-pink-light: #d5869e;
+  --color-pink-lightest: #faf0f3;
+  --color-orange: #e03d15;
+  --color-green-lightest: #ecf0e5;
+  --color-green: #779153;
+  --color-green-dark: #404e2d;
+  --color-navy: #25283d;
+  --color-navy-transparent: rgb(37, 40, 61, 0.8);
+  --color-sky-blue: #89cfff;
+  --color-sky-blue-dark: #0062a3;
+
+  --font-family-text: PlayfairDisplay, serif;
+  --font-family-title: var(--font-family-text);
+  --font-family-text-alt: 'Roboto', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+  --font-family-names: Amsterdam, cursive;
+}
+
+h1,
+h2 {
+  font-family: var(--font-family-title);
+  font-variant: small-caps;
+}
+
+.Home {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Ubuntu, sans-serif;
+  font-family: var(--font-family-text);
+}
+
+.dress-code-section {
+  --section-color: var(--color-navy);
+  --section-icon: url('components/style/images/dresscode-icon.svg');
+}
+
+.gifts-section {
+  --section-color: var(--color-orange);
+  --section-icon: url('components/style/images/gifts-icon.svg');
+}
+
+.event-section {
+  --section-color: var(--color-green-dark);
+  --section-icon: url('components/style/images/event-icon.svg');
+}
+
+.event-start-time {
+  font-size: 1.5em;
+}
+
+.location-section {
+  --section-color: var(--color-green-dark);
+  --section-icon: url('components/style/images/location-icon.svg');
+}
+
+.rsvp-section {
+  --section-color: var(--color-pink-dark);
+  --section-icon: url('components/style/images/rsvp-icon.svg');
+}
