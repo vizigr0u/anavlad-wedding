@@ -3,7 +3,6 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    container_name: backend
     volumes:
       - ./server/user-data/databases:/app/databases
       - ./server/user-data/photos:/app/photos:ro
@@ -26,7 +25,6 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: frontend
     ports:
       - "3000:80"
     depends_on:

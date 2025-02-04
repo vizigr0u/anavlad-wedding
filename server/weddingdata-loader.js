@@ -12,9 +12,10 @@ async function loadWeddingData() {
         data = JSON.parse(fileContent);
         console.log('Event config loaded from ' + filename);
     } catch (error) {
-        if (error.code === 'ERR_MODULE_NOT_FOUND') {
-            console.warn('Unable to load event config from ' + filename);
+        if (error.code === 'ENOENT') {
+            console.warn(`Using default config, unable to read ${filename}: ${error}`);
         } else {
+            console.error(`Unable to read ${filename}: ${error}`);
             throw error;
         }
     }

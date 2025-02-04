@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy package.json
 COPY package.json ./
 
+# Setup pnpm
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
@@ -38,4 +39,4 @@ ENV WEDDINGDATA_FILE=/app/weddingdata.json
 EXPOSE 5000
 
 # Define the command to run the application
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
