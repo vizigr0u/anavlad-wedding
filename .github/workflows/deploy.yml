@@ -24,8 +24,8 @@ jobs:
       - name: Build and Test Backend
         working-directory: ./server
         run: |
-          docker build -t vizigr0u/backend:${GITHUB_REF_NAME} .
-          docker run -d -p 3000:3000 --name backend-test vizigr0u/backend:${GITHUB_REF_NAME}
+          docker build -t vizigr0u/anavlad-backend:${GITHUB_REF_NAME} .
+          docker run -d -p 3000:3000 --name backend-test vizigr0u/anavlad-backend:${GITHUB_REF_NAME}
           sleep 10  # Wait for server to start
           curl --retry 3 --retry-delay 5 --fail http://localhost:3000/health-check
           docker stop backend-test
@@ -33,13 +33,13 @@ jobs:
       - name: Build and Test Frontend
         working-directory: ./frontend
         run: |
-          docker build -t vizigr0u/frontend:${GITHUB_REF_NAME} .
-          docker run -d -p 80:80 --name frontend-test vizigr0u/frontend:${GITHUB_REF_NAME}
+          docker build -t vizigr0u/anavlad-frontend:${GITHUB_REF_NAME} .
+          docker run -d -p 80:80 --name frontend-test vizigr0u/anavlad-frontend:${GITHUB_REF_NAME}
           sleep 5
           curl --retry 3 --retry-delay 5 --fail http://localhost:80
           docker stop frontend-test
 
       - name: Push Docker Images
         run: |
-          docker push vizigr0u/backend:${GITHUB_REF_NAME}
-          docker push vizigr0u/frontend:${GITHUB_REF_NAME}
+          docker push vizigr0u/anavlad-backend:${GITHUB_REF_NAME}
+          docker push vizigr0u/anavlad-frontend:${GITHUB_REF_NAME}
