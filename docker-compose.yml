@@ -1,13 +1,13 @@
 services:
   backend:
     build:
-      context: ./server
+      context: ./backend
       dockerfile: Dockerfile
     volumes:
-      - ./server/user-data/databases:/app/databases
-      - ./server/user-data/photos:/app/photos:ro
-      - ./server/user-data/static:/app/static:ro
-      - ./server/user-data/weddingdata.json:/app/weddingdata.json:ro
+      - ./backend/user-data/databases:/app/databases
+      - ./backend/user-data/photos:/app/photos:ro
+      - ./backend/user-data/static:/app/static:ro
+      - ./backend/user-data/weddingdata.json:/app/weddingdata.json:ro
     environment:
       - DOMAIN=http://localhost:3000 # where you expect the final website to be hosted
       - SESSION_SECRET=changeme-docker-compose # change this to a random string

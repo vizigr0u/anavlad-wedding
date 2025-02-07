@@ -1,6 +1,6 @@
 # Public User Data Directory
 
-This directory contains data that can or could be accessed by any visitor. For anything you want to keep private, look at the private user data directory in /server/user-data.
+This directory contains data that can or could be accessed by any visitor. For anything you want to keep private, look at the private user data directory in /backend/user-data.
 
 The goal of this directory is to keep some assets that can be changed without having to rebuild the react project or event restart the frontend server.
 
