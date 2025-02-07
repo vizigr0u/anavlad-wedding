@@ -24,12 +24,12 @@ jobs:
       - name: Build Frontend
         working-directory: ./frontend
         run: |
-          docker build -t vizigr0u/anavlad-frontend:${ github.ref_name } .
+          docker build -t vizigr0u/anavlad-frontend:${{ github.ref_name }} .
 
       - name: Build Backend
         working-directory: ./backend
         run: |
-          docker build -t vizigr0u/anavlad-backend:${ github.ref_name } .
+          docker build -t vizigr0u/anavlad-backend:${{ github.ref_name }} .
 
       - name: Create Docker network
         run: |
@@ -66,5 +66,5 @@ jobs:
 
       - name: Push Docker Images
         run: |
-          docker push vizigr0u/anavlad-backend:${ github.ref_name }
-          docker push vizigr0u/anavlad-frontend:${ github.ref_name }
+          docker push vizigr0u/anavlad-backend:${{ github.ref_name }}
+          docker push vizigr0u/anavlad-frontend:${{ github.ref_name }}
