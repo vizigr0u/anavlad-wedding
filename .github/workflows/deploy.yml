@@ -21,31 +21,27 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and Test Backend
-        working-directory: ./server
+      - name: Build and Test images
+        working-directory: .github/workflows/deploy-compose
         run: |
-          docker build -t vizigr0u/anavlad-backend:${GITHUB_REF_NAME} .
-          echo running server
-          docker run -d -p 5000:5000 --name backend-test vizigr0u/anavlad-backend:${GITHUB_REF_NAME}
+          docker compose up --build
           echo waiting 10 sec
-          sleep 10  # Wait for server to start
-          echo try to get /health
+          sleep 10
+          echo try to reach backend
           curl --retry 3 --retry-delay 5 --fail http://localhost:5000/api/health
+          echo trying to reach frontend
+          curl --retry 3 --retry-delay 5 --fail http://localhost:80
+          docker compose down
 
-      - name: Build and Test Frontend
+      - name: Build Frontend
         working-directory: ./frontend
         run: |
           docker build -t vizigr0u/anavlad-frontend:${GITHUB_REF_NAME} .
-          echo running frontend
-          docker run -d -p 80:80 --name frontend-test vizigr0u/anavlad-frontend:${GITHUB_REF_NAME}
-          echo waiting 5 sec
-          sleep 5
-          echo trying to connect to frontend
-          curl --retry 3 --retry-delay 5 --fail http://localhost:80
-          echo stopping frontend
-          docker stop frontend-test
-          echo stopping backend
-          docker stop backend-test
+
+      - name: Build Backend
+        working-directory: ./backend
+        run: |
+          docker build -t vizigr0u/anavlad-backend:${GITHUB_REF_NAME} .
 
       - name: Push Docker Images
         run: |
