@@ -26,11 +26,11 @@ jobs:
         run: |
           docker build -t vizigr0u/anavlad-backend:${GITHUB_REF_NAME} .
           echo running server
-          docker run -d -p 3000:3000 --name backend-test vizigr0u/anavlad-backend:${GITHUB_REF_NAME}
+          docker run -d -p 5000:5000 --name backend-test vizigr0u/anavlad-backend:${GITHUB_REF_NAME}
           echo waiting 10 sec
           sleep 10  # Wait for server to start
           echo try to get /health
-          curl --retry 3 --retry-delay 5 --fail http://localhost:3000/health
+          curl --retry 3 --retry-delay 5 --fail http://localhost:5000/api/health
           echo stopping
           docker stop backend-test
 
