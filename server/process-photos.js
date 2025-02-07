@@ -10,24 +10,28 @@ const sizeOfAsync = promisify(sizeOf);
 const photosDirectory = config.photosDirectory;
 const thumbDirectory = path.join(photosDirectory, 'thumbs');
 
+async function directoryExistsAsync(dirname) {
+    try {
+        const stats = await fs.stat(dirname);
+        return stats.isDirectory();
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+            return false;
+        }
+        throw err;
+    }
+}
+
 async function processPhotosAsync() {
+    if (!await directoryExistsAsync(photosDirectory)) {
+        console.warn("Photos directory doesn't exist: " + photosDirectory);
+        return [];
+    }
     try {
         // Read the photos directory asynchronously
         const photoFiles = await fs.readdir(photosDirectory);
 
-        let thumbDirectoryExists = false;
-
-        // Check if the thumbs directory exists
-        try {
-            const stats = await fs.stat(thumbDirectory);
-            thumbDirectoryExists = stats.isDirectory();
-        } catch (err) {
-            if (err.code !== 'ENOENT') {
-                // Re-throw unexpected errors
-                throw err;
-            }
-            // thumbs directory does not exist
-        }
+        let thumbDirectoryExists = await directoryExistsAsync(thumbDirectory);
 
         if (!thumbDirectoryExists) {
             console.warn('Photos directory doesn\'t contain a "thumbs" directory, full photos will be used instead.');
@@ -102,7 +106,7 @@ async function processPhotosAsync() {
 let photos = [];
 const photoPromise = processPhotosAsync()
     .then(result => photos = result)
-    .catch(err => {
+    .catch(_ => {
         photos = [];
         // Handle the error as needed, e.g., notify the user or retry
     });
